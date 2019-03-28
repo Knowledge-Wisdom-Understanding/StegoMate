@@ -28,7 +28,7 @@ chmod +x stegomate.sh
 ./stegomate.sh -a
 ```
 
-
+After dumping all the strings from the target file, stegomate will attempt to base64 decode every string and and show you the comparison in the steg_report file that is generated.
 
 ### See the help menu for more details on available options
 ### Will be adding more soon as this is an active project.
