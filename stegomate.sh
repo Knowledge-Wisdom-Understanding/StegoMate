@@ -122,6 +122,8 @@ allFunction() {
                 if [[ $i == *.jpg ]] || [[ $i == *.jpeg ]]; then
                     echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $i with password: password";
                     steghide extract -sf $i -p password
+                    echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $stegfile with empty password"; echo ""
+                    steghide extract -sf $stegfile -p ""
                 fi
             done
         }
@@ -265,7 +267,7 @@ exif() {
 binwalker() {
     # running binwalk
     printf "\e[93m##########################\e[0m Binwalk Results for $stegfile \e[93m######################## \e[0m\n"
-    binwalk $stegfile
+    binwalk -e $stegfile
 } > binwalk_output.log
 
 check_strings() {
@@ -286,15 +288,18 @@ steghide_extract() {
     echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $stegfile with password: password"; echo ""
     steghide extract -sf $stegfile -p password
     printf "\n"
+    echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $stegfile with empty password"; echo ""
+    steghide extract -sf $stegfile -p ""
+    printf "\n"
 }
 
 stegcrackin() {
     # Running stegcracker with probable top 12000 wordlist
     echo -e "\e[92m[+]\e[0m Running stegcracker on $stegfile with probable top 12000 wordlist: $stegfile"; echo ""
-    stegcracker $stegfile /usr/share/seclists/Passwords/probable-v2-top12000.txt
+    stegcracker $stegfile /usr/share/seclists/Passwords/probable-v2-top1575.txt
     printf "\n"
     echo -e "\e[92m[+]\e[0m Finished Running Steg Analysis on File: $stegfile"; echo ""
-    echo -e "\e[92m[+]\e[0m All output will be saved in steg_report directory as $filename_no_extension.output.log"; echo ""
+    echo -e "\e[92m[+]\e[0m All output will be saved in steg_report directory as <filename>.output.log"; echo ""
 }
 
 output_func() {
