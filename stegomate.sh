@@ -122,8 +122,6 @@ allFunction() {
                 if [[ $i == *.jpg ]] || [[ $i == *.jpeg ]]; then
                     echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $i with password: password";
                     steghide extract -sf $i -p password
-                    echo -e "\e[92m[+]\e[0m Steghide Attempting to extract data from $stegfile with empty password"; echo ""
-                    steghide extract -sf $stegfile -p ""
                 fi
             done
         }
@@ -267,7 +265,7 @@ exif() {
 binwalker() {
     # running binwalk
     printf "\e[93m##########################\e[0m Binwalk Results for $stegfile \e[93m######################## \e[0m\n"
-    binwalk -e $stegfile
+    binwalk $stegfile
 } > binwalk_output.log
 
 check_strings() {
