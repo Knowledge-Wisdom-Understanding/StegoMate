@@ -1,5 +1,5 @@
 # STEGOMATE
-## Automates the process of finding hidden data in specified files.
+## Automates the process of finding hidden data in files.
 
 ![alt text](https://github.com/Knowledge-Wisdom-Understanding/StegoMate/blob/master/Stegomate.PNG)
 
