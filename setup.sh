@@ -11,6 +11,9 @@ echo '[+] Running: apt-get update -y'
 apt-get update -y
 
 echo '[+] Downloading Dependencies'
+apt install libimage-exiftool-perl -y
+
+echo '[+] Downloading Dependencies'
 apt-get install steghide -y
 pip3 install stegcracker
 
