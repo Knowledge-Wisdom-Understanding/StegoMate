@@ -45,10 +45,15 @@ allFunction() {
         
         find_imgs(){
             find $cwd/ -maxdepth 1 -name '*.jpg' -exec mv {} $cwd/imgs/ \;
+            find $cwd/ -maxdepth 1 -name '*.JPG' -exec mv {} $cwd/imgs/ \;
+            find $cwd/ -maxdepth 1 -name '*.JPEG' -exec mv {} $cwd/imgs/ \;
             find $cwd/ -maxdepth 1 -name '*.jpeg' -exec mv {} $cwd/imgs/ \;
             find $cwd/ -maxdepth 1 -name '*.img' -exec mv {} $cwd/imgs/ \;
+            find $cwd/ -maxdepth 1 -name '*.IMG' -exec mv {} $cwd/imgs/ \;
             find $cwd/ -maxdepth 1 -name '*.gif' -exec mv {} $cwd/imgs/ \;
+            find $cwd/ -maxdepth 1 -name '*.GIF' -exec mv {} $cwd/imgs/ \;
             find $cwd/ -maxdepth 1 -name '*.png' -exec mv {} $cwd/imgs/ \;
+            find $cwd/ -maxdepth 1 -name '*.PNG' -exec mv {} $cwd/imgs/ \;
         }
         
         if [ -d imgs ]; then
